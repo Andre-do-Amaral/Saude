@@ -1,11 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#import seaborn as sns
-#import openpyxl
-#import matplotlib.pyplot as plt
-#from datetime import datetime
-#from datetime import timedelta
 import plotly.express as px
 import datetime
 import plotly.graph_objects as go
@@ -371,7 +366,7 @@ elif pagina == "Análise Descritiva Produtos":
 
     
 elif pagina == "Análise Descritiva por Prato":
-    st.markdown("Underconstruction :smile:")
+    st.markdown("## Analise o Seu Prato :smile:")
     nam = st.multiselect('Quais Ingredientes estão no seu prato?', list(dados.keys()))
     custo_porcao = 0
     energy = 0
@@ -435,6 +430,10 @@ elif pagina == "Análise Descritiva por Prato":
     
     data_fram = pd.concat([nomes_, series], axis = 1)
     
+    se.markdown("### O preço Aproximado do seu prato é: ")
+    kpizao = st.columns(1)
+    kpizao.metric(label="Custo por Porção", value="R$ %.0f" % custo_porcao)
+    se.markdown("---")
     st.markdown("## Quantidades de Nutrientes")
     kpill, kpimm, kpinn = st.columns(3)
     kpill.metric(label="Energia", value="%.0f" % energy)
