@@ -392,7 +392,7 @@ elif pagina == "Análise Descritiva por Prato":
         energy = energy + ingredientes[ingrediente]["energy"]
         carboid = carboid +ingredientes[ingrediente]["carboid"]
         prot = prot + ingredientes[ingrediente]["prot"]
-        gord_sat = gord_sat + ["gord_sat"]
+        gord_sat = gord_sat + ingredientes[ingrediente]["gord_sat"]
         fibra = fibra + ingredientes[ingrediente]["fibra"]
         sod = sod + ingredientes[ingrediente]["sod"]
         col = col + ingredientes[ingrediente]["col"]
