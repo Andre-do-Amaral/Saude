@@ -373,7 +373,7 @@ elif pagina == "Análise Descritiva Produtos":
 elif pagina == "Análise Descritiva por Prato":
     st.markdown("Underconstruction :smile:")
     nam = st.multiselect('Quais Ingredientes estão no seu prato?', list(dados.keys()))
-    ingredientes = max_todos_alimentos(nomes = nam, dados = dados)
+    ingredientes = max_todos_alimentos(nomes = nam)
     
     st.write('You selected:', ingredientes)
     #perc_energy = round(100*energy/ref_energ_kcal,0)
