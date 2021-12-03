@@ -374,78 +374,98 @@ elif pagina == "Análise Descritiva por Prato":
     st.markdown("Underconstruction :smile:")
     nam = st.multiselect('Quais Ingredientes estão no seu prato?', list(dados.keys()))
     custo_porcao = 0
-    
+    energy = 0
+    carboid = 0
+    prot = 0
+    gord_sat = 0
+    fibra = 0
+    sod = 0
+    col = 0
+    cal = 0
+    ferro = 0
+    potass = 0
+    vit_k = 0
+    lipideos = 0
     ingredientes = max_todos_alimentos(nomes = nam)
     for ingrediente in ingredientes.keys():
         custo_porcao = custo_porcao + ingredientes[ingrediente]["custo_porcao"]
-        custo_porcao
-    #    dict(custo_porcao=custo_porcao,energy=energy,carboid=carboid,
-    #                          prot=prot, gord_sat=gord_sat, fibra=fibra, sod=sod, col=col,
-    #                               cal=cal, ferro=ferro, potass=potass, vit_k=vit_k, lipideos=lipideos)
-    #perc_energy = round(100*energy/ref_energ_kcal,0)
-    #perc_carboid = round(100*carboid/ref_carbo_g,0)
-    #perc_prot = round(100*prot/ref_prot_g,0)
-    #perc_gord_sat = round(100*gord_sat/ref_gord_sat_g,0)
-    #perc_fibra = round(100*fibra/ref_fibra_g,0)
-    #perc_sod = round(100*sod/ref_sod_mg,0)
-    #perc_col = round(100*col/ref_colest_mg,0)
-    #perc_cal = round(100*cal/ref_calcio_mg,0)
-    #perc_ferro = round(100*ferro/ref_ferro_mg,0)
-    #perc_potassio = round(100*potass/ref_potassio_mg,0)
-    #perc_vit_k = round(100*vit_k/ref_vit_k_mg,0)
+        energy = energy + ingredientes[ingrediente]["energy"]
+        carboid = carboid +ingredientes[ingrediente]["carboid"]
+        prot = prot + ingredientes[ingrediente]["prot"]
+        gord_sat = gord_sat + ["gord_sat"]
+        fibra = fibra + ingredientes[ingrediente]["fibra"]
+        sod = sod + ingredientes[ingrediente]["sod"]
+        col = col + ingredientes[ingrediente]["col"]
+        cal = cal + ingredientes[ingrediente]["cal"]
+        ferro = ferro + ingredientes[ingrediente]["ferro"]
+        potass = potass + ingredientes[ingrediente]["potass"]
+        vit_k = vit_k + ingredientes[ingrediente]["vit_k"]
+        lipideos = lipideos + ingredientes[ingrediente]["lipideos"]
+        
+        
+
+    perc_energy = round(100*energy/ref_energ_kcal,0)
+    perc_carboid = round(100*carboid/ref_carbo_g,0)
+    perc_prot = round(100*prot/ref_prot_g,0)
+    perc_gord_sat = round(100*gord_sat/ref_gord_sat_g,0)
+    perc_fibra = round(100*fibra/ref_fibra_g,0)
+    perc_sod = round(100*sod/ref_sod_mg,0)
+    perc_col = round(100*col/ref_colest_mg,0)
+    perc_cal = round(100*cal/ref_calcio_mg,0)
+    perc_ferro = round(100*ferro/ref_ferro_mg,0)
+    perc_potassio = round(100*potass/ref_potassio_mg,0)
+    perc_vit_k = round(100*vit_k/ref_vit_k_mg,0)
     #
-    #lista_series = [perc_energy, perc_carboid,
-    #                        perc_prot, perc_gord_sat,
-    #                        perc_fibra, perc_sod,
-    #                        perc_col, perc_cal,
-    #                        perc_ferro, perc_potassio,
-    #                        perc_vit_k]
-    #
-    #lista_nomes = ["Energia", "Carboidratos", 
-    #                        "Proteínas", "Gorduras Saturadas",
-    #                        "Fibras", "Sódio", "Colesterol",
-    #                        "Cálcio", "Ferro", "Potássio",
-    #                        "Vitamina K"]
-    #
-    #series = pd.Series(lista_series, name = "(%) do Valor Diário")
-    #
-    #nomes_ = pd.Series(lista_nomes, name = "Nutriente")
-    #
-    #data_fram = pd.concat([nomes_, series], axis = 1)
-    #
-    #kpil, kpim, kpin = st.columns(3)
-    #kpil.metric(label="Energia (%)", value="%.0f" % perc_energy)
-    #kpim.metric(label="Carboidratos (%)", value="%.0f" %perc_carboid)
-    #kpin.metric(label="Proteínas (%)", value="%.0f" %perc_prot)
-    #
-    #kpil2, kpim2, kpin2 = st.columns(3)
-    #kpil2.metric(label="Gordura Saturada (%)", value="%.0f" % perc_gord_sat)
-    #kpim2.metric(label="Fibra (%)", value="%.0f" %perc_fibra)
-    #kpin2.metric(label="Sódio (%)", value="%.0f" %perc_sod)
-    #
-    #kpil3, kpim3, kpin3 = st.columns(3)
-    #kpil3.metric(label="Colesterol (%)", value="%.0f" % perc_col)
-    #kpim3.metric(label="Cálcio (%)", value="%.0f" %perc_cal)
-    #kpin3.metric(label="Ferro (%)", value="%.0f" %perc_ferro)
-    #
-    #kpil4, kpim4, kpinull4 = st.columns(3)
-    #kpil4.metric(label="Potássio (%)", value="%.0f" % perc_potassio)
-    #kpim4.metric(label="Vitamina K (%)", value="%.0f" %perc_vit_k)
-#
-#
-#
-    #
-    #fig = px.bar(data_fram, x="Nutriente", y=data_fram["(%) do Valor Diário"],
-    #                  title='Percentual do Valor Diário',
-    #                  color_discrete_sequence=["darkgreen"])
-    #fig.update_layout(title={
-    #                          "x": 0.5,
-    #                          'xanchor': 'center',
-    #                          'yanchor': 'top'},
-    #    )
-    #st.plotly_chart(fig, use_container_width=True)
+    lista_series = [perc_energy, perc_carboid,
+                            perc_prot, perc_gord_sat,
+                            perc_fibra, perc_sod,
+                            perc_col, perc_cal,
+                            perc_ferro, perc_potassio,
+                            perc_vit_k]
     
+    lista_nomes = ["Energia", "Carboidratos", 
+                            "Proteínas", "Gorduras Saturadas",
+                            "Fibras", "Sódio", "Colesterol",
+                            "Cálcio", "Ferro", "Potássio",
+                            "Vitamina K"]
     
+    series = pd.Series(lista_series, name = "(%) do Valor Diário")
+    
+    nomes_ = pd.Series(lista_nomes, name = "Nutriente")
+    
+    data_fram = pd.concat([nomes_, series], axis = 1)
+    
+    kpil, kpim, kpin = st.columns(3)
+    kpil.metric(label="Energia (%)", value="%.0f" % perc_energy)
+    kpim.metric(label="Carboidratos (%)", value="%.0f" %perc_carboid)
+    kpin.metric(label="Proteínas (%)", value="%.0f" %perc_prot)
+    
+    kpil2, kpim2, kpin2 = st.columns(3)
+    kpil2.metric(label="Gordura Saturada (%)", value="%.0f" % perc_gord_sat)
+    kpim2.metric(label="Fibra (%)", value="%.0f" %perc_fibra)
+    kpin2.metric(label="Sódio (%)", value="%.0f" %perc_sod)
+    
+    kpil3, kpim3, kpin3 = st.columns(3)
+    kpil3.metric(label="Colesterol (%)", value="%.0f" % perc_col)
+    kpim3.metric(label="Cálcio (%)", value="%.0f" %perc_cal)
+    kpin3.metric(label="Ferro (%)", value="%.0f" %perc_ferro)
+    
+    kpil4, kpim4, kpinull4 = st.columns(3)
+    kpil4.metric(label="Potássio (%)", value="%.0f" % perc_potassio)
+    kpim4.metric(label="Vitamina K (%)", value="%.0f" %perc_vit_k)
+##
+#
+    #
+    fig = px.bar(data_fram, x="Nutriente", y=data_fram["(%) do Valor Diário"],
+                      title='Percentual do Valor Diário',
+                      color_discrete_sequence=["darkgreen"])
+    fig.update_layout(title={
+                              "x": 0.5,
+                              'xanchor': 'center',
+                              'yanchor': 'top'},
+        )
+    st.plotly_chart(fig, use_container_width=True)
+        
     
     
 elif pagina == "Sobre o Desenvolvedor":
