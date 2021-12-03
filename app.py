@@ -69,9 +69,9 @@ def max_todos_alimentos(nomes):
         vit_k = vit_k_mg[len(vit_k_mg)-1]
         lipideos = lipid_g[len(lipid_g)-1]
 
-        ingredientes[nome] = [dict(custo_porcao=custo_porcao,energy=energy,carboid=carboid,
+        ingredientes[nome] = dict(custo_porcao=custo_porcao,energy=energy,carboid=carboid,
                               prot=prot, gord_sat=gord_sat, fibra=fibra, sod=sod, col=col,
-                                   cal=cal, ferro=ferro, potass=potass, vit_k=vit_k, lipideos=lipideos)]
+                                   cal=cal, ferro=ferro, potass=potass, vit_k=vit_k, lipideos=lipideos)
     return ingredientes
       
 
@@ -113,7 +113,7 @@ if pagina == "Início":
     ingredientes = max_todos_alimentos(nomes = nomes)
     arroz = ingredientes["Arroz"]
     arroz
-    arroz_custo_porcao = arroz[0]
+    arroz_custo_porcao = arroz["fibra"]
     arroz_custo_porcao
     
 elif pagina == "Análise Descritiva Produtos":
