@@ -69,6 +69,19 @@ def max_todos_alimentos(nomes):
         vit_k = vit_k_mg[len(vit_k_mg)-1]
         lipideos = lipid_g[len(lipid_g)-1]
         st.markdown(nome)
+        st.markdown(energy)
+        st.markdown(carboid)
+        st.markdown(prot)
+        st.markdown(gord_sat)
+        st.markdown(fibra)
+        st.markdown(sod)
+        st.markdown(col)
+        st.markdown(cal)
+        st.markdown(ferro)
+        st.markdown(potass)
+        st.markdown(vit_k)
+        st.markdown(lipideos)
+        st.markdown(custo_porcao)
         ingredientes[nome] = [custo_porcao, emergy, carboid, prot, gord_sat, fibra, sod, col, cal, ferro, potass, vit_k, lipideos]
     return ingredientes
       
