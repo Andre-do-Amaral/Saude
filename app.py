@@ -68,7 +68,7 @@ def max_todos_alimentos(nomes):
         potass = potassio_mg[len(potassio_mg)-1]
         vit_k = vit_k_mg[len(vit_k_mg)-1]
         lipideos = lipid_g[len(lipid_g)-1]
-        
+        st.markdown(nome)
         ingredientes[nome] = [custo_porcao, emergy, carboid, prot, gord_sat, fibra, sod, col, cal, ferro, potass, vit_k, lipideos]
     return ingredientes
       
