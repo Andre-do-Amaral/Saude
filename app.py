@@ -17,6 +17,71 @@ def load_data():
     dados = pd.read_excel("Ficha_tec_prep_10.11_v21.xlsx", sheet_name=None)
     return dados
 
+
+def max_todos_alimentos(nomes = nomes):
+    ingredientes = dict()
+    for nome in nomes:
+        alimento = []
+        quantidade_g = []
+        energia_kcal = []
+        carbo_g = []
+        protei_g = []
+        lipid_g = []
+        gord_sat_g = []
+        colest_g = []
+        fibra_g = []
+        calcio_mg = []
+        ferro_mg = []
+        sodio_mg = []
+        potassio_mg = []
+        vit_k_mg = []
+        custo_porcao = dados[nome].iloc[3,5]
+        
+        for i in dados[nome].iloc[20:31,:].index:
+            
+            if isnotNaN(dados[nome].iloc[i,0]):
+                alimento.append(dados[nome].iloc[i,0])
+                quantidade_g.append(dados[nome].iloc[i,1])
+                energia_kcal.append(dados[nome].iloc[i,2])
+                carbo_g.append(dados[nome].iloc[i,3])
+                protei_g.append(dados[nome].iloc[i,4])
+                lipid_g.append(dados[nome].iloc[i,5])
+                gord_sat_g.append(dados[nome].iloc[i,6])
+                colest_g.append(dados[nome].iloc[i,7])
+                fibra_g.append(dados[nome].iloc[i,8])
+                calcio_mg.append(dados[nome].iloc[i,9])
+                ferro_mg.append(dados[nome].iloc[i,10])
+                sodio_mg.append(dados[nome].iloc[i,11])
+                potassio_mg.append(dados[nome].iloc[i,12])
+                vit_k_mg.append(dados[nome].iloc[i,13])
+                
+                
+        energy = energia_kcal[len(energia_kcal)-1]
+        carboid = carbo_g[len(carbo_g)-1]
+        prot = protei_g[len(protei_g)-1]
+        gord_sat = gord_sat_g[len(gord_sat_g)-1]
+        fibra = fibra_g[len(fibra_g)-1]
+        sod = sodio_mg[len(sodio_mg)-1]
+        col = colest_g[len(colest_g)-1]
+        cal = calcio_mg[len(calcio_mg)-1]
+        ferro = ferro_mg[len(ferro_mg)-1]
+        potass = potassio_mg[len(potassio_mg)-1]
+        vit_k = vit_k_mg[len(vit_k_mg)-1]
+        lipideos = lipid_g[len(lipid_g)-1]
+        
+        ingredientes[nome] = [custo_porcao, emergy, carboid, prot, gord_sat, fibra, sod, col, cal, ferro,
+                potass, vit_k, lipideos]
+    return ingredientes
+      
+
+
+#def prato(alimentos):
+    
+
+    
+
+
+
 ref_energ_kcal = 2000
 ref_carbo_g = 300
 ref_prot_g = 50
@@ -44,7 +109,7 @@ if pagina == "Início":
     st.markdown("---")
 
     st.markdown("Web App para Análise Descritiva das informações nutricionais dos alimentos. Selecione o que deseja visualizar no menu ao lado.")
-
+    ingredientes = ingredientes(nomes = nomes)
 
 elif pagina == "Análise Descritiva Produtos":
     data = datetime.datetime.now()
@@ -306,6 +371,11 @@ elif pagina == "Análise Descritiva Produtos":
     
 elif pagina == "Análise Descritiva por Prato":
     st.markdown("Underconstruction :smile:")
+    
+    
+    
+    
+    
     
 elif pagina == "Sobre o Desenvolvedor":
     st.markdown("""
