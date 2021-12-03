@@ -18,7 +18,7 @@ def load_data():
     return dados
 
 
-def max_todos_alimentos(nomes = nomes):
+def max_todos_alimentos(nomes):
     ingredientes = dict()
     for nome in nomes:
         alimento = []
