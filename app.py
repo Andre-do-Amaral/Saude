@@ -32,7 +32,7 @@ ref_vit_k_mg = 120
 dados = load_data()
 nomes = list(dados.keys())
 
-paginas = ["Início", "Análise Descritiva Produtos","Sobre o Desenvolvedor"]
+paginas = ["Início", "Análise Descritiva Produtos","Análise Descritiva por Prato","Sobre o Desenvolvedor"]
 
 pagina = st.sidebar.radio("Selecione uma página", paginas)
 
@@ -302,6 +302,10 @@ elif pagina == "Análise Descritiva Produtos":
                               },
         )
     st.plotly_chart(fig, use_container_width=True)
+
+    
+elif pagina == "Análise Descritiva por Prato":
+    st.markdown("Underconstruction :smile:")
     
 elif pagina == "Sobre o Desenvolvedor":
     st.markdown("""
