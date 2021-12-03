@@ -69,7 +69,10 @@ def max_todos_alimentos(nomes):
         vit_k = vit_k_mg[len(vit_k_mg)-1]
         lipideos = lipid_g[len(lipid_g)-1]
 
-        ingredientes[nome] = [custo_porcao, energy, carboid, prot, gord_sat, fibra, sod, col, cal, ferro, potass, vit_k, lipideos]
+        ingredientes[nome] = [dict(custo_porcao=custo_porcao), dict(energy=energy), dict(carboid=carboid),
+                              dict(prot=prot), dict(gord_sat=gord_sat), dict(fibra=fibra),
+                              dict(sod=sod), dict(col=col), dict(cal=cal), dict(ferro=ferro),
+                              dict(potass=potass), dict(vit_k=vit_k), dict(lipideos=lipideos)]
     return ingredientes
       
 
