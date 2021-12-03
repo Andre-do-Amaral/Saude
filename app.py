@@ -301,16 +301,34 @@ elif pagina == "Análise Descritiva Produtos":
     st.plotly_chart(fig, use_container_width=True)
     
 elif pagina == "Sobre o Desenvolvedor":
-    st.markdown("""# Sobre o Desenvolvedor
-    ---
-Olá, meu nome é André Carpinteiro do Amaral, me formo em Engenharia Aeronáutica este ano pela Universidade Federal de Itajubá. Ao longo da graduação ministrei aulas voluntárias em um curso assistencial, fui tutor pela universidade e participei de dois projetos de extensão, um na área de Motores à Combustão e outro na área de Análise de Dados de Vibração. Atualmente estou estagiando na Embraer S/A na área de Desenvolvimento de Produtos e estou estudando Ciência de Dados na FLAI e na Digital House.
+    st.markdown("""
+# Olá, eu sou o André 👨🏼‍💻
 
-Sou entusiasta de ciência de dados, machine learning e novas tendências tecnológicas.
+## Quem sou eu?
 
-Se conecte comigo e me encontre no linkedin:
+- Estudante de Data Science.
+- Formando como Bacharel em Engenharia Mecânica Aeronáutica - UNIFEI.
+- Professor Particular.
 
+## Skills
+
+- 🐍 Python 
+- 📈 Excel
+- 📊 PowerBI
+- ❇️ Minitab
+- 👨🏼‍💻 Análise de Dados
+
+## Onde me encontrar?
 
 - [Linkedin](https://www.linkedin.com/in/andre-amaral-gb/) 
+
+## Alguns dos meus Projetos
+
+ - [Previsão se Cliente é Premium - Modelo de Classificação Binária - Detalhado](https://github.com/Andre-do-Amaral/Analise-de-Cliente)
+ - [Análise de Ocorrências Aeronáuticas da Aviação Civil Brasileira](https://app.powerbi.com/view?r=eyJrIjoiNTFhMzcwM2ItNzA5ZS00NDJhLTlkZjgtOTRjNDY1ZDMwMmFhIiwidCI6IjdmZTQ3YTc5LTQ2NjEtNGNjMC05MjljLTg0NWU4ZTQxZTdiNyJ9&pageName=ReportSection)
+ - [Análise de Ocorrências de Violência Contra a Mulher no Estado de São Paulo](https://app.powerbi.com/view?r=eyJrIjoiODkxZDg4NzUtYzk5NC00ZTlmLWE4YTktYjhjZmU3M2JjODFhIiwidCI6IjdmZTQ3YTc5LTQ2NjEtNGNjMC05MjljLTg0NWU4ZTQxZTdiNyJ9&pageName=ReportSection)
+
+
 
 """)
         
