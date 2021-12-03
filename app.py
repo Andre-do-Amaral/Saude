@@ -113,6 +113,7 @@ if pagina == "Início":
     st.markdown("Web App para Análise Descritiva das informações nutricionais dos alimentos. Selecione o que deseja visualizar no menu ao lado.")
     ingredientes = max_todos_alimentos(nomes = nomes)
     arroz = ingredientes["Arroz"]
+    arroz
     arroz_custo_porcao = arroz["custo_porcao"]
     arroz_custo_porcao
     
