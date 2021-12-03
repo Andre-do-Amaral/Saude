@@ -431,11 +431,10 @@ elif pagina == "Análise Descritiva por Prato":
     data_fram = pd.concat([nomes_, series], axis = 1)
     
     st.markdown("### O preço Aproximado do seu prato é: ")
-    
+    custo_porcao
     kpizao = st.columns(2)
-    
     kpizao.metric(label="Custo por Porção", value="%.0f" % custo_porcao)
-    se.markdown("---")
+    st.markdown("---")
     st.markdown("## Quantidades de Nutrientes")
     kpill, kpimm, kpinn = st.columns(3)
     kpill.metric(label="Energia", value="%.0f" % energy)
