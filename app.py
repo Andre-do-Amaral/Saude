@@ -114,7 +114,7 @@ if pagina == "Início":
     ingredientes = max_todos_alimentos(nomes = nomes)
     arroz = ingredientes["Arroz"]
     arroz
-    arroz_custo_porcao = arroz["custo_porcao"]
+    arroz_custo_porcao = arroz["fibra"]
     arroz_custo_porcao
     
 elif pagina == "Análise Descritiva Produtos":
