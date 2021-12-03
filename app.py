@@ -71,7 +71,7 @@ def max_todos_alimentos(nomes):
 
         ingredientes[nome] = [dict(custo_porcao=custo_porcao,energy=energy,carboid=carboid,
                               prot=prot, gord_sat=gord_sat, fibra=fibra, sod=sod, col=col,
-                                   cal=cal, ferro=ferro, potass=potass, vit_k=vit_k, lipideos=lipideos]
+                                   cal=cal, ferro=ferro, potass=potass, vit_k=vit_k, lipideos=lipideos)]
     return ingredientes
       
 
