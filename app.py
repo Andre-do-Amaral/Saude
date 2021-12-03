@@ -82,6 +82,8 @@ def max_todos_alimentos(nomes):
         st.markdown(vit_k)
         st.markdown(lipideos)
         st.markdown(custo_porcao)
+        lista = [custo_porcao, emergy, carboid, prot, gord_sat, fibra, sod, col, cal, ferro, potass, vit_k, lipideos]
+        st.markdown(lista)
         ingredientes[nome] = [custo_porcao, emergy, carboid, prot, gord_sat, fibra, sod, col, cal, ferro, potass, vit_k, lipideos]
     return ingredientes
       
