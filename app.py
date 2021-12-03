@@ -14,7 +14,6 @@ def isnotNaN(x):
     return x == x
 
 
-@st.cache
 def load_data():
     dados = pd.read_excel("Ficha_tec_prep_10.11_v21.xlsx", sheet_name=None)
     return dados
