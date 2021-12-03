@@ -435,6 +435,28 @@ elif pagina == "Análise Descritiva por Prato":
     
     data_fram = pd.concat([nomes_, series], axis = 1)
     
+    st.markdown("## Quantidades de Nutrientes")
+    kpill, kpimm, kpinn = st.columns(3)
+    kpill.metric(label="Energia", value="%.0f" % energy)
+    kpimm.metric(label="Carboidratos", value="%.0f" %carboid)
+    kpinn.metric(label="Proteínas", value="%.0f" %prot)
+    
+    kpil22, kpim22, kpin22 = st.columns(3)
+    kpil22.metric(label="Gordura Saturada", value="%.0f" % gord_sat)
+    kpim22.metric(label="Fibra", value="%.0f" %fibra)
+    kpin22.metric(label="Sódio", value="%.0f" %sod)
+    
+    kpil33, kpim33, kpin33 = st.columns(3)
+    kpil33.metric(label="Colesterol", value="%.0f" %col)
+    kpim33.metric(label="Cálcio", value="%.0f" %cal)
+    kpin33.metric(label="Ferro", value="%.0f" %ferro)
+    
+    kpil44, kpim44, kpinull44 = st.columns(3)
+    kpil44.metric(label="Potássio ", value="%.0f" % potass)
+    kpim44.metric(label="Vitamina K", value="%.0f" %vit_k)
+    
+    
+    st.markdown("## % Do valor Diário")
     kpil, kpim, kpin = st.columns(3)
     kpil.metric(label="Energia (%)", value="%.0f" % perc_energy)
     kpim.metric(label="Carboidratos (%)", value="%.0f" %perc_carboid)
