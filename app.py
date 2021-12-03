@@ -373,9 +373,15 @@ elif pagina == "Análise Descritiva Produtos":
 elif pagina == "Análise Descritiva por Prato":
     st.markdown("Underconstruction :smile:")
     nam = st.multiselect('Quais Ingredientes estão no seu prato?', list(dados.keys()))
-    ingredientes = max_todos_alimentos(nomes = nam)
+    custo_porcao = 0
     
-    st.write('You selected:', ingredientes)
+    ingredientes = max_todos_alimentos(nomes = nam)
+    for ingrediente in ingredientes.keys():
+        custo_porcao = custo_porcao + ingredientes[ingrediente]["custo_porcao"]
+        custo_porcao
+    #    dict(custo_porcao=custo_porcao,energy=energy,carboid=carboid,
+    #                          prot=prot, gord_sat=gord_sat, fibra=fibra, sod=sod, col=col,
+    #                               cal=cal, ferro=ferro, potass=potass, vit_k=vit_k, lipideos=lipideos)
     #perc_energy = round(100*energy/ref_energ_kcal,0)
     #perc_carboid = round(100*carboid/ref_carbo_g,0)
     #perc_prot = round(100*prot/ref_prot_g,0)
