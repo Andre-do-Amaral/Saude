@@ -433,7 +433,7 @@ elif pagina == "Análise Descritiva por Prato":
     st.markdown("### O preço Aproximado do seu prato é: ")
     custo_porcao
     kpil222, kpim222, kpin222 = st.columns(3)
-    kpil222.metric(label="Gordura Saturada", value="%.0f" % gord_sat)
+    kpil222.metric(label="Gordura Saturada", value="%.0f" % custo_porcao)
     kpim222.metric(label="Fibra", value="%.0f" %fibra)
     kpin222.metric(label="Sódio", value="%.0f" %sod)
     st.markdown("---")
