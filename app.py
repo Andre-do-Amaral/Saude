@@ -29,7 +29,7 @@ ref_vit_k_mg = 120
 dados = pd.read_excel("Ficha_tec_prep_10.11_v21.xlsx", sheet_name=None)
 nomes = list(dados.keys())
 
-paginas = ["Início", "Análise Descritiva Produtos","Agradecimento Especial"]
+paginas = ["Início", "Análise Descritiva Produtos","Sobre o Desenvolvedor"]
 
 pagina = st.sidebar.radio("Selecione uma página", paginas)
 
@@ -300,12 +300,15 @@ elif pagina == "Análise Descritiva Produtos":
         )
     st.plotly_chart(fig, use_container_width=True)
     
-elif pagina == "Agradecimento Especial":
-    st.markdown("""# Agradecimentos Especiais 
-                
-Agradecemos ao colega André Carpinteiro do Amaral, que nos ajudou com alguns insights e análises dos dados
+elif pagina == "Sobre o Desenvolvedor":
+    st.markdown("""# Sobre o Desenvolvedor
+    ---
+Olá, meu nome é André Carpinteiro do Amaral, me formo em Engenharia Aeronáutica este ano pela Universidade Federal de Itajubá. Ao longo da graduação ministrei aulas voluntárias em um curso assistencial, fui tutor pela universidade e participei de dois projetos de extensão, um na área de Motores à Combustão e outro na área de Análise de Dados de Vibração. Atualmente estou estagiando na Embraer S/A na área de Desenvolvimento de Produtos e estou estudando Ciência de Dados na FLAI e na Digital House.
 
-Para quem desejar conhecê-lo para parcerias, abaixo está o link do linkedin dele.
+Sou entusiasta de ciência de dados, machine learning e novas tendências tecnológicas.
+
+Se conecte comigo e me encontre no linkedin:
+
 
 - [Linkedin](https://www.linkedin.com/in/andre-amaral-gb/) 
 
