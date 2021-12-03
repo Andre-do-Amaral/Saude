@@ -109,7 +109,7 @@ if pagina == "Início":
     st.markdown("---")
 
     st.markdown("Web App para Análise Descritiva das informações nutricionais dos alimentos. Selecione o que deseja visualizar no menu ao lado.")
-    ingredientes = ingredientes(nomes = nomes)
+    ingredientes = max_todos_alimentos(nomes = nomes)
 
 elif pagina == "Análise Descritiva Produtos":
     data = datetime.datetime.now()
