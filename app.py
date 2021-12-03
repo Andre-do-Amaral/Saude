@@ -14,6 +14,11 @@ def isnotNaN(x):
     return x == x
 
 
+@st.cache
+def load_data():
+    dados = pd.read_excel("Ficha_tec_prep_10.11_v21.xlsx", sheet_name=None)
+    return dados
+
 ref_energ_kcal = 2000
 ref_carbo_g = 300
 ref_prot_g = 50
@@ -26,7 +31,7 @@ ref_ferro_mg = 14
 ref_potassio_mg = 3500
 ref_vit_k_mg = 120
 
-dados = pd.read_excel("Ficha_tec_prep_10.11_v21.xlsx", sheet_name=None)
+dados = load_data()
 nomes = list(dados.keys())
 
 paginas = ["Início", "Análise Descritiva Produtos","Sobre o Desenvolvedor"]
